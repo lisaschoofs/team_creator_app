@@ -1,6 +1,5 @@
 $(document).ready(function(){
 
-
 }); //end doc ready
 
 function generateBtn() {
@@ -13,6 +12,14 @@ function generateBtn() {
 
 function functionName() {
 //  AJAX POST to send the formulated teams
+  //need object with generated teams into an {object: team1: name...}
+$.ajax({
+  type:'POST',
+  url: '/teams/save',
+  success: function(response) {
+    console.log(response);
+  }
+});
 }
 
 
@@ -20,6 +27,7 @@ function appendTeams(names) {
   $('.appendNewTeam').empty();
   for (var i = 0; i < response.length; i++) {
   var name = response[i];
+  
   appendStudents(name);
   }
 }
@@ -43,3 +51,7 @@ $.Ajax({
   }
 });//end Ajax
 }//end function
+
+function appendShuffleArraytoDOM() {
+  //do this
+}
