@@ -3,9 +3,21 @@ $(document).ready(function(){
 
 }); //end doc ready
 
+function generateBtn() {
+  $('.generateTeamsBtn').on('click', function() {
+    //logic
+    //dynamically create boxes that contain teams depending on input val()
+    //inline boxes - use bootstrap
+  });
+}
+
+function functionName() {
+//  AJAX POST to send the formulated teams
+}
+
 
 function appendTeams(names) {
-  $('div to append to').empty();
+  $('.appendNewTeam').empty();
   for (var i = 0; i < response.length; i++) {
   var name = response[i];
   appendStudents(name);
@@ -14,8 +26,7 @@ function appendTeams(names) {
 
 
 function appendStudents(student) {
-$('div to append to').empty();
-var $el = $('div to append to').children().last();
+var $el = $('.appendNewTeam').children().last();
 $el.append('<p>' + student.name + '</p>');
 
 
@@ -32,11 +43,3 @@ $.Ajax({
   }
 });//end Ajax
 }//end function
-
-
-function functionName() {
-  //logic for generating random teams
-
-}
-
-//append containers for number of teams.....dynamically create depending on input val()
