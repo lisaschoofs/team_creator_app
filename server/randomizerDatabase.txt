@@ -1,0 +1,73 @@
+> use randomizer
+
+> db.students.insert({
+... "name" : "Anisa"
+... })
+
+> db.students.insert({
+... "name" : "Lisa"
+... })
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({
+... "name" : "Craig"
+... })
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({
+... "name" : "Betsy"
+... })
+WriteResult({ "nInserted" : 1 })
+> db.students.insert({
+... "name" : "Teigen"
+... })
+
+> db.students.insert({
+... "name" : "Chris"
+... })
+
+> db.students.insert({
+... "name" : "Dan"
+... })
+
+> db.students.insert({
+... "name" : "Claudia"
+... })
+
+> db.students.insert({
+... "name" : "Emily"
+... })
+
+> db.students.insert({
+... "name" : "Keith"
+... })
+
+> db.students.insert({
+... "name" : "Anna"
+... })
+
+> db.students.insert({
+... "name" : "Bri"
+... })
+
+> db.students.insert({
+... "name" : "Erin"
+... })
+
+> db.students.insert({
+... "name" : "Kevin"
+... })
+
+> db.students.insert({
+... "name" : "Olga"
+... })
+
+> db.students.insert({
+... "name" : "Nic"
+... })
+
+> db.students.insert({
+... "name" : "Logan"
+... })
+
+> db.students.insert({
+... "name" : "Y Paul"
+... })
