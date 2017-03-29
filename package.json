@@ -8,5 +8,11 @@
     "start": "node server/app.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "jquery": "^3.2.1",
+    "mongoose": "^4.9.2"
+  }
 }

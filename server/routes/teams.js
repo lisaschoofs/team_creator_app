@@ -8,7 +8,17 @@ var StudentSchema = mongoose.Schema({
     student: String
 });
 
-var student = mongoose.model('Students', StudentSchema);
+var Student = mongoose.model('Student', StudentSchema);
+
+router.get("/", function(req, res) {
+  Student.find(function(err, allStudents) {
+    if(err) {
+      res.sendStatus(500);
+    } else {
+      res.send(allStudents);
+    }
+  });
+}); //end of get router
 
 
 module.exports = router;
