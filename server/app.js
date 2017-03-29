@@ -6,7 +6,7 @@ var teams = require('./routes/teams.js');
 
 var mongoose = require('mongoose');
 // Location of the database
-var mongoURI = 'mongodb://localhost:27017/market';
+var mongoURI = 'mongodb://localhost:27017/randomizer';
 // Make the connection
 var MongoDB = mongoose.connect(mongoURI).connection;
 
@@ -23,8 +23,8 @@ app.use(express.static('server/public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
 //for route later
-// app.use('/teams', teams);
+app.use('/teams', teams);
 
 app.listen(port, function(){
   console.log("listening on port", port);
-})
+});
