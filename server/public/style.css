@@ -1,0 +1,21 @@
+.head {
+  background-color: darkseagreen;
+}
+
+h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+.appendNewTeam{
+  text-align: center;
+  font-size: 15px;
+}
+
+#teams {
+  font-size: 25px;
+}
