@@ -3,26 +3,14 @@ $(document).ready(function() {
 
     getStudentNames();
 
-    generateBtn();
+    generateTeams();
 
 
 }); //end doc ready
 
 
 
-function generateBtn() {
-    $('.inputForm').on('submit', function(event) {
-        event.preventDefault();
-        console.log('teams');
-        var numberOfTeamsNeeded = $('.inputNeededGroups').val();
 
-        for (var i = 0; i < numberOfTeamsNeeded; i++) {
-        console.log(numberOfTeamsNeeded);
-        $('#output').append('<div class="row"><div class="col-md-12">Test</div></div>');
-        }
-        $('.inputNeededGroups').val('');
-    });
-}
 
 function saveTeamsToDB() {
     //  AJAX POST to send the formulated teams
@@ -39,92 +27,109 @@ function saveTeamsToDB() {
     });
 }
 
-function appendTeams(names) {
-    $('.appendNewTeam').empty();
-    for (var i = 0; i < response.length; i++) {
-        var name = response[i];
 
-        appendStudents(name);
-    }
-}
-//don't need
+// function generateBtn() {
+//     $('.inputForm').on('submit', function(event) {
+//         event.preventDefault();
+//         console.log('teams');
+//         var teamSize = $('.inputNeededGroups').val();
+//
+//         for (var i = 0; i < teamSize; i++) {
+//             console.log(teamSize);
+//             $('#output').append('<div class="row"><div class="col-md-12">' + teamOne + teamTwo '</div></div>');
+//         }
+//         $('.inputNeededGroups').val('');
+//     });
+//     getStudentNames();
+// }
 
 function generateTeams(randomArray) {
-var teamSize = $("#numberOfTeamsNeeded").val();
+    $('.inputForm').on('submit', function(event) {
+        event.preventDefault();
 
-  switch(teamSize){
-    case 2:
-      teamOne = randomArray.splice(0, 10);
-      teamTwo = randomArray.splice(0, 10);
-      break;
+        var teamSize = $(".inputNeededGroups").val();
+        console.log(teamSize);
 
-    case 3:
-      teamOne = randomArray.splice(0, 7);
-      teamTwo = randomArray.splice(0, 7);
-      teamThree = randomArray.splice(0, 7);
-      break;
-    case 4:
-      teamOne = randomArray.splice(0, 6);
-      teamTwo = randomArray.splice(0, 6);
-      teamThree = randomArray.splice(0, 5);
-      teamFour = randomArray.splice(0, 5);
-      break;
+        switch (teamSize) {
+            case 2:
+                teamOne = randomArray.splice(0, 10);
+                for (var i = 0; i < teamOne.length; i++) {
+                    $('.output').append('<p>' + teamOne[i] + '</p>');
 
-    case 5:
-      teamOne = randomArray.splice(0, 4);
-      teamTwo = randomArray.splice(0, 4);
-      teamThree = randomArray.splice(0, 5);
-      teamFour = randomArray.splice(0, 5);
-      teamFive = randomArray.splice(0, 5);
-      break;
+                }
+                teamTwo = randomArray.splice(0, 10);
+                for (var a = 0; a < teamTwo.length; a++) {
+                    $('.output').append('<p>' + teamTwo[a] + '</p>');
+                }
+                break;
 
-    case 6:
-      teamOne = randomArray.splice(0, 4);
-      teamTwo = randomArray.splice(0, 4);
-      teamThree = randomArray.splice(0, 4);
-      teamFour = randomArray.splice(0, 4);
-      teamFive = randomArray.splice(0, 4);
-      teamSix = randomArray.splice(0, 4);
-      break;
+            case 3:
+                teamOne = randomArray.splice(0, 7);
+                teamTwo = randomArray.splice(0, 7);
+                teamThree = randomArray.splice(0, 7);
+                break;
+            case 4:
+                teamOne = randomArray.splice(0, 6);
+                teamTwo = randomArray.splice(0, 6);
+                teamThree = randomArray.splice(0, 5);
+                teamFour = randomArray.splice(0, 5);
+                break;
 
-    case 7:
-      teamOne = randomArray.splice(0, 3);
-      teamTwo = randomArray.splice(0, 3);
-      teamThree = randomArray.splice(0, 3);
-      teamFour = randomArray.splice(0, 4);
-      teamFive = randomArray.splice(0, 4);
-      teamSix = randomArray.splice(0, 4);
-      teamSeven = randomArray.splice(0, 4);
-      break;
+            case 5:
+                teamOne = randomArray.splice(0, 4);
+                teamTwo = randomArray.splice(0, 4);
+                teamThree = randomArray.splice(0, 5);
+                teamFour = randomArray.splice(0, 5);
+                teamFive = randomArray.splice(0, 5);
+                break;
 
-    case 8:
-      teamOne = randomArray.splice(0, 3);
-      teamTwo = randomArray.splice(0, 3);
-      teamThree = randomArray.splice(0, 3);
-      teamFour = randomArray.splice(0, 3);
-      teamFive = randomArray.splice(0, 3);
-      teamSix = randomArray.splice(0, 3);
-      teamSeven = randomArray.splice(0, 4);
-      teamEight = randomArray.splice(0, 4);
-      break;
+            case 6:
+                teamOne = randomArray.splice(0, 4);
+                teamTwo = randomArray.splice(0, 4);
+                teamThree = randomArray.splice(0, 4);
+                teamFour = randomArray.splice(0, 4);
+                teamFive = randomArray.splice(0, 4);
+                teamSix = randomArray.splice(0, 4);
+                break;
 
-    case 9:
-      teamOne = randomArray.splice(0, 3);
-      teamTwo = randomArray.splice(0, 3);
-      teamThree = randomArray.splice(0, 3);
-      teamFour = randomArray.splice(0, 3);
-      teamFive = randomArray.splice(0, 3);
-      teamSix = randomArray.splice(0, 3);
-      teamSeven = randomArray.splice(0, 3);
-      teamEight = randomArray.splice(0, 3);
-      teamNine = randomArray.splice(0, 3);
-      break;
+            case 7:
+                teamOne = randomArray.splice(0, 3);
+                teamTwo = randomArray.splice(0, 3);
+                teamThree = randomArray.splice(0, 3);
+                teamFour = randomArray.splice(0, 4);
+                teamFive = randomArray.splice(0, 4);
+                teamSix = randomArray.splice(0, 4);
+                teamSeven = randomArray.splice(0, 4);
+                break;
 
-    default:
-      prompt("Try again! You can only have 1-9 groups!");
+            case 8:
+                teamOne = randomArray.splice(0, 3);
+                teamTwo = randomArray.splice(0, 3);
+                teamThree = randomArray.splice(0, 3);
+                teamFour = randomArray.splice(0, 3);
+                teamFive = randomArray.splice(0, 3);
+                teamSix = randomArray.splice(0, 3);
+                teamSeven = randomArray.splice(0, 4);
+                teamEight = randomArray.splice(0, 4);
+                break;
 
-  } // end switch
+            case 9:
+                teamOne = randomArray.splice(0, 3);
+                teamTwo = randomArray.splice(0, 3);
+                teamThree = randomArray.splice(0, 3);
+                teamFour = randomArray.splice(0, 3);
+                teamFive = randomArray.splice(0, 3);
+                teamSix = randomArray.splice(0, 3);
+                teamSeven = randomArray.splice(0, 3);
+                teamEight = randomArray.splice(0, 3);
+                teamNine = randomArray.splice(0, 3);
+                break;
 
+            default:
+                prompt("Try again! You can only have 1-9 groups!");
+
+        } // end switch
+    });
 } // end function generateTeams
 
 function appendStudents(response) {
@@ -136,9 +141,6 @@ function appendStudents(response) {
     // console.log(reMix);
     // console.log(shuffleArray(reMix));
     var randomArray = shuffleArray(reMix);
-    for (var p = 0; p < randomArray.length; p++) {
-        $("#output").append('<p>' + randomArray[p] + '</p>');
-    }
 }
 
 
