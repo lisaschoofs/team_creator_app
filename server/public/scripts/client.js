@@ -5,16 +5,25 @@ getStudentNames();
 
 }); //end doc ready
 
+function generateBtn() {
+  $('.generateTeamsBtn').on('click', function() {
+    //logic
+    //dynamically create boxes that contain teams depending on input val()
+    //inline boxes - use bootstrap
+  });
+}
 
-// function appendTeams(response) {
-//
-//   $('#output').empty();
-//   for (var i = 0; i < response.length; i++) {
-//   var name = response[i];
-//
-//   appendStudents(name);
-//   }
-// }
+function functionName() {
+//  AJAX POST to send the formulated teams
+  //need object with generated teams into an {object: team1: name...}
+$.ajax({
+  type:'POST',
+  url: '/teams/save',
+  success: function(response) {
+    console.log(response);
+  }
+});
+}
 
 
 function appendStudents(response) {
@@ -29,7 +38,8 @@ function appendStudents(response) {
     for(var p = 0; p < newArray.length; p++) {
       $("#output").append('<p>' + newArray[p] + '</p>');
     }
-}//end func
+
+
 
 function getStudentNames() {
   //AJAx GET REquuest
@@ -53,6 +63,4 @@ function shuffleArray(array) {
           array[j] = temp;
       }
       return array;
-}
-
-//append containers for number of teams.....dynamically create depending on input val()
+    }  
