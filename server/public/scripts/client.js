@@ -38,7 +38,7 @@ function appendStudents(response) {
     for(var p = 0; p < newArray.length; p++) {
       $("#output").append('<p>' + newArray[p] + '</p>');
     }
-
+}
 
 
 function getStudentNames() {
@@ -63,4 +63,4 @@ function shuffleArray(array) {
           array[j] = temp;
       }
       return array;
-    }  
+    }
