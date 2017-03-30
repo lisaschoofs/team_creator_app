@@ -3,12 +3,23 @@ $(document).ready(function() {
 
     getStudentNames();
 
-  
-    generateBtn();
+
+    // generateBtn();
 
 
 }); //end doc ready
 
+function getStudentNames() {
+    //AJAx GET REquuest
+    $.ajax({
+        type: 'GET',
+        url: '/teams',
+        success: function(response) {
+            // console.log(response);
+            appendStudents(response);
+        }
+    }); //end Ajax
+} //end function
 
 
 function generateBtn() {
@@ -33,26 +44,14 @@ function appendStudents(response) {
     for (var i = 0; i < response.length; i++) {
         reMix.push(response[i].name);
     }
-    // console.log(reMix);
-    // console.log(shuffleArray(reMix));
+    console.log(reMix);
+    console.log(shuffleArray(reMix));
 
     var randomArray = shuffleArray(reMix);
    for(var p = 0; p < randomArray.length; p++) {
      $("#output").append('<p>' + randomArray[p] + '</p>');
 }
 
-
-function getStudentNames() {
-    //AJAx GET REquuest
-    $.ajax({
-        type: 'GET',
-        url: '/teams',
-        success: function(response) {
-            // console.log(response);
-            appendStudents(response);
-        }
-    }); //end Ajax
-} //end function
 
 
 function shuffleArray(array) {
