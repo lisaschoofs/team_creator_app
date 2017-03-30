@@ -36,7 +36,6 @@ function appendTeams(names) {
 }
 
 
-
 function appendStudents(response) {
   var reMix = [];
   $("#output").empty();
@@ -74,4 +73,4 @@ function shuffleArray(array) {
           array[j] = temp;
       }
       return array;
-    }
+}
