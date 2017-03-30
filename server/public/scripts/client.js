@@ -16,6 +16,7 @@ function functionName() {
 $.ajax({
   type:'POST',
   url: '/teams/save',
+  data: {teams: x},
   success: function(response) {
     console.log(response);
   }
@@ -27,7 +28,7 @@ function appendTeams(names) {
   $('.appendNewTeam').empty();
   for (var i = 0; i < response.length; i++) {
   var name = response[i];
-  
+
   appendStudents(name);
   }
 }
